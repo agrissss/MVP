@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiesību aktu un oficiālo datu pārlūks</title>
+    <meta name="description" content="Meklē Latvijas likumus, MK noteikumus un oficiālos atvērtos datus vienuviet." />
+    <script>
+      // Lietot tumšo režīmu, ja sistēma to pieprasa vai ja lietotājs to iepriekš izvēlējies
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && systemDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
